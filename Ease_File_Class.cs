@@ -69,6 +69,15 @@ public class EaseFileCompact
         }
         
     }
+
+    public ComposeDirectory(System.IO.DirectoryInfo directory, System.IO.FileInfo FileSeve)
+    {
+        System.IO.FileInfo[] TempListFiles = directory.GetFiles();
+        for (int shag = 0; shag<= TempListFiles.Length - 1; shag++)
+        {
+            
+        }
+    }
     protected class InfoFile
     {
         public string NameFile;
