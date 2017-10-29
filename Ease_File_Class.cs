@@ -59,6 +59,16 @@ public class EaseFileCompact
     {
         File.WriteAllBytes(SevePath, ReadBytes(NameFile));
     }
+
+    public void DecomposeFiles(System.IO.DirectoryInfo Direcory)
+    {
+        Direcory.Create();
+        for (int shag = 0; shag<= ListFiles.Length - 2; shag++)
+        {
+            File.WriteAllBytes(Direcory.FullName + '/' + ListFiles[shag].NameFile, ReadBytes(ListFiles[shag].NameFile));
+        }
+        
+    }
     protected class InfoFile
     {
         public string NameFile;
