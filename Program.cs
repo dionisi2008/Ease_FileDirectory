@@ -8,8 +8,7 @@ namespace Ease_FileDirectory
         static void Main(string[] args)
         {
             EaseFileCompact BetaTest = new EaseFileCompact("/home/denis/Denis.txt");
-            byte[] TempOutTest = BetaTest.ReadBytes(BetaTest.GetListFiles()[4].Split(' ')[0]);
-            
+            BetaTest.WriteFile(BetaTest.GetListFiles()[1].Split(' ')[0], "/home/denis/tt.jpeg");
             
             //if (yy.Exists == true)
             //{

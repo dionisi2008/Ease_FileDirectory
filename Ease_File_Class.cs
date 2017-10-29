@@ -55,6 +55,10 @@ public class EaseFileCompact
         return null;
     }
 
+    public void WriteFile(string NameFile, string SevePath)
+    {
+        File.WriteAllBytes(SevePath, ReadBytes(NameFile));
+    }
     protected class InfoFile
     {
         public string NameFile;
