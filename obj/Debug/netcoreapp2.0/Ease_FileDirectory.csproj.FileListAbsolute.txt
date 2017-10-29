@@ -18,3 +18,13 @@
 /home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.runtimeconfig.dev.json
 /home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.dll
 /home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
+c:\Users\tania\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.csproj.CoreCompileInputs.cache
+c:\Users\tania\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.AssemblyInfoInputs.cache
+c:\Users\tania\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.AssemblyInfo.cs
+c:\Users\tania\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.dll
+c:\Users\tania\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.pdb
+c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.deps.json
+c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.runtimeconfig.json
+c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.runtimeconfig.dev.json
+c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.dll
+c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.pdb

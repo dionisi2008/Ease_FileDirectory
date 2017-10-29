@@ -7,9 +7,9 @@ namespace Ease_FileDirectory
     {
         static void Main(string[] args)
         {
-            EaseFileCompact BetaTest = new EaseFileCompact("/home/denis/Denis.txt");
-            BetaTest.WriteFile(BetaTest.GetListFiles()[1].Split(' ')[0], "/home/denis/tt.jpeg");
-            BetaTest.DecomposeFiles(new System.IO.DirectoryInfo("/home/denis/test"));
+            EaseFileCompact BetaTest = new EaseFileCompact(@"C:\Users\tania\Desktop\out.bd");
+            //BetaTest.WriteFile(BetaTest.GetListFiles()[1].Split(' ')[0], "/home/denis/tt.jpeg");
+            //BetaTest.DecomposeFiles(new System.IO.DirectoryInfo("/home/denis/test"));
 
             //if (yy.Exists == true)
             //{

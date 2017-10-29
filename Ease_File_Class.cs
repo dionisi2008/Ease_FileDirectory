@@ -2,13 +2,16 @@ using System;
 using System.IO;
 public class EaseFileCompact
 {
+    protected string PathFile;
     protected InfoFile[] ListFiles;
     protected FileStream StreamRead;
+    protected FileStream StreamWrite;
 
    
 
     public EaseFileCompact(string Path)
     {
+        this.PathFile = Path;
         if (File.Exists(Path) == true)
         {
             StreamRead = File.Open(Path, FileMode.Open); //Создает поток с файлом
@@ -70,13 +73,18 @@ public class EaseFileCompact
         
     }
 
-    public ComposeDirectory(System.IO.DirectoryInfo directory, System.IO.FileInfo FileSeve)
+    public void ComposeDirectory(System.IO.DirectoryInfo directory, System.IO.FileInfo FileSeve)
     {
-        System.IO.FileInfo[] TempListFiles = directory.GetFiles();
-        for (int shag = 0; shag<= TempListFiles.Length - 1; shag++)
+        System.IO.FileInfo[] InfoFiles = directory.GetFiles();
+        string[] TempListFile = new string[InfoFiles.Length];
+        StreamWrite = File.Create(PathFile);
+        for (int shag = 0; shag<= InfoFiles.Length - 1; shag++)
         {
-            
+            StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, GetInt(InfoFiles[shag].Length.ToString()));
+            TempListFile[shag] = StreamWrite.Position.ToString() + '|' + (StreamWrite.Position + ListFiles[shag].Length).ToString() + '|' + ListFiles[shag].NameFile;
         }
+        StreamWrite.Close();
+        File.AppendAllLines(PathFile, TempListFile);
     }
     protected class InfoFile
     {
