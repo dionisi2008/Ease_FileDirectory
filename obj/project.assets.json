@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/denis/Рабочий стол/Directory/Ease_FileDirectory/Ease_FileDirectory.csproj",
+      "projectUniqueName": "/home/denis/Ease_FileDirectory/Ease_FileDirectory.csproj",
       "projectName": "Ease_FileDirectory",
-      "projectPath": "/home/denis/Рабочий стол/Directory/Ease_FileDirectory/Ease_FileDirectory.csproj",
+      "projectPath": "/home/denis/Ease_FileDirectory/Ease_FileDirectory.csproj",
       "packagesPath": "/home/denis/.nuget/packages/",
-      "outputPath": "/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/",
+      "outputPath": "/home/denis/Ease_FileDirectory/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
