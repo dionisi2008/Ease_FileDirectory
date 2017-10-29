@@ -40,6 +40,20 @@ public class EaseFileCompact
         return OutInfo;
     }
 
+    public byte[] ReadBytes(string NameFile)
+    {
+        for (int shag = 0; shag <= ListFiles.Length -1; shag++)
+        {
+            if (ListFiles[shag].NameFile == NameFile)
+            {
+                byte[] TempOut = new byte[ListFiles[shag].Length];
+                StreamRead.Position = ListFiles[shag].GetPosition()[0];
+                StreamRead.Read(TempOut, 0, ListFiles[shag].Length);
+                return TempOut;
+            }
+        }
+        return null;
+    }
 
     protected class InfoFile
     {
@@ -56,6 +70,11 @@ public class EaseFileCompact
         public string GetInfoFile()
         {
             return NameFile + " " + Length.ToString();
+        }
+
+        public int[] GetPosition()
+        {
+            return new int[] {StartPosition, EndPosition};
         }
     }
     protected int GetInt(string Info)

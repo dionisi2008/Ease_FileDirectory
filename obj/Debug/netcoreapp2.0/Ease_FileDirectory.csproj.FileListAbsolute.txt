@@ -8,3 +8,8 @@
 /home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfo.cs
 /home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.dll
 /home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
+/home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.csproj.CoreCompileInputs.cache
+/home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfoInputs.cache
+/home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfo.cs
+/home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.dll
+/home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
