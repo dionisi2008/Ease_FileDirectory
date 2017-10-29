@@ -13,3 +13,8 @@
 /home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfo.cs
 /home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.dll
 /home/denis/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
+/home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.deps.json
+/home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.runtimeconfig.json
+/home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.runtimeconfig.dev.json
+/home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.dll
+/home/denis/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.pdb

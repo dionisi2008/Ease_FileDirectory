@@ -9,7 +9,7 @@ namespace Ease_FileDirectory
         {
             EaseFileCompact BetaTest = new EaseFileCompact("/home/denis/Denis.txt");
             byte[] TempOutTest = BetaTest.ReadBytes(BetaTest.GetListFiles()[4].Split(' ')[0]);
-
+            
             
             //if (yy.Exists == true)
             //{
