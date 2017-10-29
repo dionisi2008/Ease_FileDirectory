@@ -77,11 +77,13 @@ public class EaseFileCompact
     {
         System.IO.FileInfo[] InfoFiles = directory.GetFiles();
         string[] TempListFile = new string[InfoFiles.Length];
+        ListFiles = new InfoFile[InfoFiles.Length];
         StreamWrite = File.Create(PathFile);
         for (int shag = 0; shag<= InfoFiles.Length - 1; shag++)
         {
             StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, GetInt(InfoFiles[shag].Length.ToString()));
             TempListFile[shag] = StreamWrite.Position.ToString() + '|' + (StreamWrite.Position + ListFiles[shag].Length).ToString() + '|' + ListFiles[shag].NameFile;
+            ListFiles[shag] = new InfoFile(GetInt(StreamWrite.Position.ToString()), GetInt((StreamWrite.Position + ListFiles[shag].Length).ToString()), InfoFiles[shag].Name);
         }
         StreamWrite.Close();
         File.AppendAllLines(PathFile, TempListFile);
