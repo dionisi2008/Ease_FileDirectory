@@ -1,0 +1,10 @@
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.deps.json
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.runtimeconfig.json
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.runtimeconfig.dev.json
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.dll
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/bin/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.csproj.CoreCompileInputs.cache
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfoInputs.cache
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.AssemblyInfo.cs
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.dll
+/home/denis/Рабочий стол/Directory/Ease_FileDirectory/obj/Debug/netcoreapp2.0/Ease_FileDirectory.pdb
