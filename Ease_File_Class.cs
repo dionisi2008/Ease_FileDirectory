@@ -83,12 +83,12 @@ public class EaseFileCompact
         for (int shag = 0; shag<= InfoFiles.Length - 1; shag++)
         {
             ListFiles[shag] = new InfoFile(StreamWrite.Position, StreamWrite.Position + InfoFiles[shag].Length, InfoFiles[shag].Name);
-            StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, GetInt(InfoFiles[shag].Length.ToString()));
+            StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, int.Parse(InfoFiles[shag].Length.ToString()));
             System.Console.WriteLine(((shag * 100) / ListFiles.Length).ToString() + "% = " + StreamWrite.Position.ToString() + '|' + (StreamWrite.Position + ListFiles[shag].Length).ToString() + '|' + ListFiles[shag].NameFile);
         }
         byte[] GetInfoFuction = OutBytesGetStringsListFiles(GetStringsInfoFile(ListFiles));
         StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
-        GetInfoFuction = System.Text.UTF8Encoding.UTF8.GetBytes((GetInfoFuction.Length * 2).ToString());
+        GetInfoFuction = System.Text.ASCIIEncoding.ASCII.GetBytes((GetInfoFuction.Length * 2).ToString());
         StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
         StreamWrite.Close();
 
@@ -102,7 +102,7 @@ public class EaseFileCompact
         {
             StringOut = StringOut + GetListFiles[shag] + "\r\n";
         }
-        return System.Text.UTF8Encoding.UTF8.GetBytes(StringOut);
+        return System.Text.ASCIIEncoding.ASCII.GetBytes(StringOut);
     }
 
 
@@ -141,11 +141,6 @@ public class EaseFileCompact
         {
             return this.StartPosition + "|" + this.EndPosition + "|" + this.NameFile;
         }
-    }
-    protected int GetInt(string Info)
-    {
-        
-        return int.Parse(Info);
     }
    
 }
