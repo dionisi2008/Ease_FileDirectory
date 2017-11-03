@@ -18,18 +18,19 @@ public class EaseFileCompact
             StreamRead.Position = StreamRead.Length - 100; //Выберает позицию последниз 100 байт
             byte[] TempBuffer = new byte[100]; // буфер выделяеться для чтения 100 байт
             StreamRead.Read(TempBuffer, 0, 100); // чтение последних 100 байт в потоке
-            string y =  System.Text.UTF8Encoding.UTF8.GetString(TempBuffer).ToString();
-            string[] TempString = System.Text.UTF8Encoding.UTF8.GetString(TempBuffer).Split("\n"); //декадирование в текст
+            string[] TempString = System.Text.ASCIIEncoding.ASCII.GetString(TempBuffer).Split("\r\n"); //декадирование в текст
             // и перемещение в временный сассив строк 
-            StreamRead.Position = StreamRead.Length - int.Parse(TempString[TempString.Length - 2]); //предпоследние значение в масиве строк это пазация потока где начинаеться список файлов 
-            TempBuffer = new byte[System.Convert.ToInt32(TempString[TempString.Length - 2])]; // выделение памяти для чтения байт со списком файлов
+            StreamRead.Position = StreamRead.Length - int.Parse(TempString[TempString.Length - 1]); //предпоследние значение в масиве строк это пазация потока где начинаеться список файлов 
+            TempBuffer = new byte[int.Parse(TempString[TempString.Length - 1])]; // выделение памяти для чтения байт со списком файлов
             StreamRead.Read(TempBuffer, 0, TempBuffer.Length); //Процесс чтения списка файлов 
-            TempString = System.Text.UTF8Encoding.UTF8.GetString(TempBuffer).Split("\n"); //пребразуем в масив строк
-            TempString[0] = "0|" + TempString[0].Split('|')[1] + '|' + TempString[0].Split('|')[2]; //откидывает мусор создаем первую позицию
+            TempString = System.Text.ASCIIEncoding.ASCII.GetString(TempBuffer).Split("\r\n"); //пребразуем в масив строк
+            string[] String1Temp = TempString[0].Split('|');
+            TempString[0] = "0|" + String1Temp[String1Temp.Length - 2] + '|' + String1Temp[String1Temp.Length - 1]; //откидывает мусор создаем первую позицию
             ListFiles = new InfoFile[TempString.Length - 1]; //в классе обявляем список файлов
-            for (int shag = 0; shag <= ListFiles.Length - 2; shag++) //заполняем это все
+            for (int shag = 0; shag <= ListFiles.Length - 1; shag++) //заполняем это все
             {
-                ListFiles[shag] = new InfoFile(GetInt(TempString[shag].Split('|')[0]), GetInt(TempString[shag].Split('|')[1]), TempString[shag].Split('|')[2]);
+                string[] StrArrayFor = TempString[shag].Split('|');
+                ListFiles[shag] = new InfoFile(long.Parse(StrArrayFor[0]), long.Parse(StrArrayFor[1]), StrArrayFor[2]);
             }
         }
            
@@ -77,25 +78,42 @@ public class EaseFileCompact
     public void ComposeDirectory(System.IO.DirectoryInfo directory, System.IO.FileInfo FileSeve)
     {
         System.IO.FileInfo[] InfoFiles = directory.GetFiles();
-        string[] TempListFile = new string[InfoFiles.Length + 1];
         ListFiles = new InfoFile[InfoFiles.Length];
         StreamWrite = File.Create(PathFile);
         for (int shag = 0; shag<= InfoFiles.Length - 1; shag++)
         {
-            //StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, GetInt(InfoFiles[shag].Length.ToString()));
             ListFiles[shag] = new InfoFile(StreamWrite.Position, StreamWrite.Position + InfoFiles[shag].Length, InfoFiles[shag].Name);
-            TempListFile[shag] = (StreamWrite.Position.ToString() + '|' + (StreamWrite.Position + ListFiles[shag].Length).ToString() + '|' + ListFiles[shag].NameFile).ToString();
+            StreamWrite.Write(File.ReadAllBytes(InfoFiles[shag].FullName), 0, GetInt(InfoFiles[shag].Length.ToString()));
             System.Console.WriteLine(((shag * 100) / ListFiles.Length).ToString() + "% = " + StreamWrite.Position.ToString() + '|' + (StreamWrite.Position + ListFiles[shag].Length).ToString() + '|' + ListFiles[shag].NameFile);
         }
+        byte[] GetInfoFuction = OutBytesGetStringsListFiles(GetStringsInfoFile(ListFiles));
+        StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
+        GetInfoFuction = System.Text.UTF8Encoding.UTF8.GetBytes((GetInfoFuction.Length * 2).ToString());
+        StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
         StreamWrite.Close();
-        System.IO.StreamWriter uuuu = new System.IO.StreamWriter("D:\tetst.txt");
-        uuuu.WriteLine("D");
-        uuuu.Close();
-        string eee = TempListFile[TempListFile.Length - 2];
-        TempListFile[TempListFile.Length - 1] = (System.Text.UTF8Encoding.UTF8.GetBytes(string.Concat(TempListFile)).Length + ((TempListFile.Length - 1) * 2)).ToString();
-        File.WriteAllLines(@"D:\y.txt", TempListFile);
-        File.AppendAllLines(PathFile, TempListFile, System.Text.Encoding.UTF8);
+
         
+    }
+
+    protected byte[] OutBytesGetStringsListFiles(string[] GetListFiles)
+    {
+        string StringOut = null;
+        for (int shag = 0; shag <= GetListFiles.Length - 1; shag++)
+        {
+            StringOut = StringOut + GetListFiles[shag] + "\r\n";
+        }
+        return System.Text.UTF8Encoding.UTF8.GetBytes(StringOut);
+    }
+
+
+    protected string[] GetStringsInfoFile(InfoFile[] GetListInfoFile)
+    {
+        string[] TempOut = new string[GetListInfoFile.Length];
+        for (int shag = 0; shag <= GetListInfoFile.Length - 1; shag++)
+        {
+            TempOut[shag] = GetListInfoFile[shag].GetString();
+        }
+        return TempOut;
     }
     protected class InfoFile    
     {
@@ -117,6 +135,11 @@ public class EaseFileCompact
         public long[] GetPosition()
         {
             return new long[] {StartPosition, EndPosition};
+        }
+
+        public string GetString()
+        {
+            return this.StartPosition + "|" + this.EndPosition + "|" + this.NameFile;
         }
     }
     protected int GetInt(string Info)
