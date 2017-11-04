@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\tania\\Ease_FileDirectory\\Ease_FileDirectory.csproj",
+      "projectUniqueName": "C:\\Users\\tania\\Ease_FileDirectory\\Ease_FileDirectory.csproj",
       "projectName": "Ease_FileDirectory",
-      "projectPath": "c:\\Users\\tania\\Ease_FileDirectory\\Ease_FileDirectory.csproj",
+      "projectPath": "C:\\Users\\tania\\Ease_FileDirectory\\Ease_FileDirectory.csproj",
       "packagesPath": "C:\\Users\\tania\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\tania\\Ease_FileDirectory\\obj\\",
+      "outputPath": "C:\\Users\\tania\\Ease_FileDirectory\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

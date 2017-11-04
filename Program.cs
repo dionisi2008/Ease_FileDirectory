@@ -5,8 +5,24 @@ namespace Ease_FileDirectory
 {
     class Program       
     {
-        public void Main(string[] args)
+         static public void NewFile(string  path, EaseFileCompact EaSeEDC)
         {
+            if (File.Exists(path) == false)
+                {
+                    System.Console.WriteLine("Такого файла в системе нет! Он будет создан! Выберите каколог для укамплектации файлов.");
+                    EaSeEDC.ComposeDirectory(new DirectoryInfo(System.Console.ReadLine()), null);
+                    System.Console.WriteLine("Фаил создан. Перезапуск.");
+                    EaSeEDC = null;
+                    Main(new string[] {path});
+                    
+                }
+        }
+
+
+        static void Main(string[] args)
+        {
+            
+            
             EaseFileCompact BetaTest = null;
             if (args.Length > 0)
             {
@@ -22,12 +38,16 @@ namespace Ease_FileDirectory
                     switch (ReadConsole[0])
                     {
                         case "ListFiles":
-                            System.Console.WriteLine(BetaTest.GetListFiles());
-                            Main(args);
+                            string[] temp = BetaTest.GetListFiles();
+                            for (int shag = 0; shag <= temp.Length - 1; shag++)
+                            {
+                                System.Console.WriteLine(temp[shag]);
+                            }
+                            //Main(args);
                         break;
                         case "DecomposeALL":
                             BetaTest.DecomposeFiles(new DirectoryInfo(ReadConsole[1]));
-                            Main(args);
+                            //Main(args);
                         break;
                         case "ReadBytes":
                             byte[] TempOut = BetaTest.ReadBytes(ReadConsole[1]);
@@ -35,17 +55,18 @@ namespace Ease_FileDirectory
                             {
                                 System.Console.WriteLine(TempOut[shag]);
                             }
-                            Main(args);
+                            //Main(args);
                         break;
                         case "WriteFile":
                         BetaTest.WriteFile(ReadConsole[1], ReadConsole[2]);
-                        Main(args);
+                        //Main(args);
                         break;
                         
                     }
                 }
                 else
                 {
+                    BetaTest = null;
                     NewFile(args[0], new EaseFileCompact(args[0]));
                 }
             }
@@ -53,20 +74,12 @@ namespace Ease_FileDirectory
             {
                 System.Console.WriteLine("Укажите путь к файлу с которым придеться работать.");
                 string path = System.Console.ReadLine();
+                BetaTest = new EaseFileCompact(path);
                 NewFile(path, BetaTest);
                 Main(new string[] {path});
 
             }
         }
-        public void NewFile(string  path, EaseFileCompact EaSeEDC)
-        {
-            if (File.Exists(path) == false)
-                {
-                    System.Console.WriteLine("Такого файла в системе нет! Он будет создан! Выберите каколог для укамплектации файлов.");
-                    EaSeEDC.ComposeDirectory(new DirectoryInfo(System.Console.ReadLine()), null);
-                    System.Console.WriteLine("Фаил создан. Перезапуск.");
-                    Main(new string[] {path});
-                }
-        }
+        
     }
 }
