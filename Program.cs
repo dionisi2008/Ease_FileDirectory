@@ -7,19 +7,14 @@ namespace Ease_FileDirectory
     {
         static void Main(string[] args)
         {
-            if (args.Length != 0)
+            EaseFileCompact BetaTest = new EaseFileCompact(@"D:\nas.edc");
+            BetaTest.ComposeDirectory(new DirectoryInfo(@"D:\all"), null);
+            string[] list = BetaTest.GetListFiles();
+            //BetaTest.DecomposeFiles(new DirectoryInfo(@"C:\Users\tania\Desktop\out1"));
+            for (int shag = 0; shag <= list.Length - 1; shag++)
             {
-                if (File.Exists(args[0]) == true)
-                {
-                EaseFileCompact ReadFile = new EaseFileCompact(args[0]);
-                string[] ReadListFiles = ReadFile.GetListFiles();
-                for (int shag = 0; shag <= ReadListFiles.Length - 1; shag++)
-                    {
-                    System.Console.WriteLine(ReadListFiles[shag]);
-                    }
-                }
+                System.Console.WriteLine(list[shag]);
             }
-            
         }
     }
 }

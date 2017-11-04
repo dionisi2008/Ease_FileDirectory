@@ -20,9 +20,10 @@ public class EaseFileCompact
             StreamRead.Read(TempBuffer, 0, 100); // чтение последних 100 байт в потоке
             string[] TempString = System.Text.ASCIIEncoding.ASCII.GetString(TempBuffer).Split("\r\n"); //декадирование в текст
             // и перемещение в временный сассив строк 
-            StreamRead.Position = StreamRead.Length - int.Parse(TempString[TempString.Length - 1]); //предпоследние значение в масиве строк это пазация потока где начинаеться список файлов 
+            StreamRead.Position = (StreamRead.Length - int.Parse(TempString[TempString.Length - 1]) - System.Text.ASCIIEncoding.ASCII.GetBytes(TempString[TempString.Length - 1]).Length); //предпоследние значение в масиве строк это пазация потока где начинаеться список файлов 
             TempBuffer = new byte[int.Parse(TempString[TempString.Length - 1])]; // выделение памяти для чтения байт со списком файлов
-            StreamRead.Read(TempBuffer, 0, TempBuffer.Length); //Процесс чтения списка файлов 
+            StreamRead.Read(TempBuffer, 0, TempBuffer.Length); //Процесс чтения списка файлов
+            File.WriteAllBytes("DeBug.txt", TempBuffer);
             TempString = System.Text.ASCIIEncoding.ASCII.GetString(TempBuffer).Split("\r\n"); //пребразуем в масив строк
             string[] String1Temp = TempString[0].Split('|');
             TempString[0] = "0|" + String1Temp[String1Temp.Length - 2] + '|' + String1Temp[String1Temp.Length - 1]; //откидывает мусор создаем первую позицию
@@ -68,7 +69,7 @@ public class EaseFileCompact
     public void DecomposeFiles(System.IO.DirectoryInfo Direcory)
     {
         Direcory.Create();
-        for (int shag = 0; shag<= ListFiles.Length - 2; shag++)
+        for (int shag = 0; shag<= ListFiles.Length - 1; shag++)
         {
             File.WriteAllBytes(Direcory.FullName + '/' + ListFiles[shag].NameFile, ReadBytes(ListFiles[shag].NameFile));
         }
@@ -88,10 +89,10 @@ public class EaseFileCompact
         }
         byte[] GetInfoFuction = OutBytesGetStringsListFiles(GetStringsInfoFile(ListFiles));
         StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
-        GetInfoFuction = System.Text.ASCIIEncoding.ASCII.GetBytes((GetInfoFuction.Length * 2).ToString());
+        GetInfoFuction = System.Text.ASCIIEncoding.ASCII.GetBytes((GetInfoFuction.Length).ToString());
         StreamWrite.Write(GetInfoFuction, 0, GetInfoFuction.Length);
         StreamWrite.Close();
-
+        StreamRead = File.Open(PathFile, FileMode.Open);
         
     }
 
