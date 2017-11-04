@@ -8,9 +8,9 @@ namespace Ease_FileDirectory
         static void Main(string[] args)
         {
             EaseFileCompact BetaTest = new EaseFileCompact(@"D:\nas.edc");
-            BetaTest.ComposeDirectory(new DirectoryInfo(@"D:\all"), null);
+            //BetaTest.ComposeDirectory(new DirectoryInfo(@"D:\all"), null);
             string[] list = BetaTest.GetListFiles();
-            //BetaTest.DecomposeFiles(new DirectoryInfo(@"C:\Users\tania\Desktop\out1"));
+            BetaTest.DecomposeFiles(new DirectoryInfo(@"D:\all2"));
             for (int shag = 0; shag <= list.Length - 1; shag++)
             {
                 System.Console.WriteLine(list[shag]);

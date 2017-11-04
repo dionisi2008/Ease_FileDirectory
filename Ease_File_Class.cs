@@ -71,6 +71,12 @@ public class EaseFileCompact
         Direcory.Create();
         for (int shag = 0; shag<= ListFiles.Length - 1; shag++)
         {
+            
+            if (ListFiles[shag].NameFile.Split('?').Length > 1)
+            {
+                    ListFiles[shag].NameFile = "No Name " + DateTime.Now.Millisecond + " " + new Random(DateTime.Now.Millisecond).Next(-666, 6666) + '.' + ListFiles[shag].NameFile.Split('.')[ListFiles[shag].NameFile.Split('.').Length - 1];
+            }
+            System.Console.WriteLine(((shag * 100) / ListFiles.Length).ToString() + " % " + ListFiles[shag].NameFile);
             File.WriteAllBytes(Direcory.FullName + '/' + ListFiles[shag].NameFile, ReadBytes(ListFiles[shag].NameFile));
         }
         
