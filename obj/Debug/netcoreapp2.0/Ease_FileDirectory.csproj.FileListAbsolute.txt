@@ -28,3 +28,17 @@ c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.run
 c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.runtimeconfig.dev.json
 c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.dll
 c:\Users\tania\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.pdb
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.deps.json
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.runtimeconfig.json
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.runtimeconfig.dev.json
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.dll
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\bin\Debug\netcoreapp2.0\Ease_FileDirectory.pdb
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.csproj.AssemblyReference.cache
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.AssemblyInfoInputs.cache
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.AssemblyInfo.cs
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.sourcelink.json
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.dll
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.pdb
+C:\Users\Denis\Documents\GitHub\Ease_FileDirectory\obj\Debug\netcoreapp2.0\Ease_FileDirectory.genruntimeconfig.cache
